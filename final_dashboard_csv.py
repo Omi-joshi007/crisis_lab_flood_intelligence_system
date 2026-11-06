@@ -577,7 +577,8 @@ def build_map(filtered_df):
     if filtered_df.empty:
         fig = px.scatter_mapbox(lat=[], lon=[], zoom=4)
         fig.update_layout(
-            mapbox_style="carto-darkmatter",
+            #mapbox_style="carto-darkmatter",
+            map_style="dark",
             mapbox_center={"lat": -41.0, "lon": 173.0},
             mapbox_zoom=4.3,
             margin={"l": 0, "r": 0, "t": 0, "b": 0},
@@ -597,7 +598,8 @@ def build_map(filtered_df):
     if map_df.empty:
         fig = px.scatter_mapbox(lat=[], lon=[], zoom=4)
         fig.update_layout(
-            mapbox_style="carto-darkmatter",
+            #mapbox_style="carto-darkmatter",
+            map_style="dark",
             mapbox_center={"lat": -41.0, "lon": 173.0},
             mapbox_zoom=4.3,
             margin={"l": 0, "r": 0, "t": 0, "b": 0},
@@ -643,21 +645,37 @@ def build_map(filtered_df):
         marker={"size": 13, "opacity": 0.92},
         hovertemplate="%{customdata[0]}<extra></extra>"
     )
+    # fig.update_layout(
+    #     mapbox_style="carto-darkmatter",
+    #     mapbox_center={"lat": -41.0, "lon": 173.0},
+    #     mapbox_zoom=4.3,
+    #     margin={"l": 0, "r": 0, "t": 0, "b": 0},
+    #     paper_bgcolor=THEME["map_paper"],
+    #     plot_bgcolor=THEME["map_paper"],
+    #     font={"color": THEME["text_main"]},
+    #     legend_title_text="Impact Category",
+    #     legend={
+    #         "bgcolor": "rgba(15,20,23,0.90)",
+    #         "bordercolor": THEME["border"],
+    #         "borderwidth": 1,
+    #         "font": {"color": THEME["text_main"]},
+    #     },
+    # )
     fig.update_layout(
-        mapbox_style="carto-darkmatter",
-        mapbox_center={"lat": -41.0, "lon": 173.0},
-        mapbox_zoom=4.3,
-        margin={"l": 0, "r": 0, "t": 0, "b": 0},
-        paper_bgcolor=THEME["map_paper"],
-        plot_bgcolor=THEME["map_paper"],
-        font={"color": THEME["text_main"]},
-        legend_title_text="Impact Category",
-        legend={
-            "bgcolor": "rgba(15,20,23,0.90)",
-            "bordercolor": THEME["border"],
-            "borderwidth": 1,
-            "font": {"color": THEME["text_main"]},
-        },
+            map_style="dark",
+            map_center={"lat": -41.0, "lon": 173.0},
+            map_zoom=4.3,
+            margin={"l": 0, "r": 0, "t": 0, "b": 0},
+            paper_bgcolor=THEME["map_paper"],
+            plot_bgcolor=THEME["map_paper"],
+            font={"color": THEME["text_main"]},
+            legend_title_text="Impact Category",
+            legend={
+                "bgcolor": "rgba(15,20,23,0.90)",
+                "bordercolor": THEME["border"],
+                "borderwidth": 1,
+                "font": {"color": THEME["text_main"]},
+            },
     )
     return fig
 
@@ -1248,7 +1266,7 @@ app.layout = html.Div(
                     },
                     children=[
                         html.Div(
-                            "Aegis Policy Assistant",
+                            "Policy Assistant Chatbox",
                             style={"fontSize": "22px", "fontWeight": "800", "color": THEME["text_main"]},
                         ),
                         html.Button(
