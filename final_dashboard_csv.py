@@ -692,7 +692,7 @@ def build_category_chart(filtered_df):
     )
     fig = px.bar(
         cat_df,
-        x="impact_category_pretty",
+        x="impact category",
         y="count",
         text="count",
         color="impact_category_pretty",
@@ -716,7 +716,7 @@ def build_region_chart(filtered_df):
     fig = px.bar(
         region_df,
         x="count",
-        y="region_display",
+        y="region",
         orientation="h",
         text="count",
         color_discrete_sequence=["#57e389"],
@@ -737,7 +737,7 @@ def build_year_chart(filtered_df):
     )
     fig = px.line(
         year_df,
-        x="event_year",
+        x="event year",
         y="count",
         markers=True,
     )
