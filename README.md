@@ -2,6 +2,8 @@
 
 An AI-assisted research prototype that converts unstructured New Zealand flood news into a structured, evidence-linked **Event -> Incident -> Impact** knowledge base, then exposes the results through an interactive Dash dashboard and an event-scoped RAG assistant.
 
+🌐 **Live Dashboard:** [Explore the Flood Intelligence Dashboard](https://crisis-lab-flood-intelligence-syste.vercel.app/)
+
 ## What this project does
 
 The project addresses a practical disaster-intelligence problem: flood impacts are reported across many news articles, but the information is fragmented, duplicated and difficult to analyse consistently. The pipeline collects flood-related news, identifies which real-world flood event each article belongs to, extracts incidents and impacts, preserves supporting evidence, and makes the results explorable through a dashboard.
