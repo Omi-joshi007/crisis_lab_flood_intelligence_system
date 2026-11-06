@@ -1266,7 +1266,7 @@ app.layout = html.Div(
                     },
                     children=[
                         html.Div(
-                            "Policy Assistant Chatbox",
+                            "Policy Assistant - Chatbox",
                             style={"fontSize": "22px", "fontWeight": "800", "color": THEME["text_main"]},
                         ),
                         html.Button(
