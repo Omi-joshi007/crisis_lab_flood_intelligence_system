@@ -1259,7 +1259,7 @@ app.layout = html.Div(
                     },
                     children=[
                         html.Div(
-                            "Aegis Policy Assistant",
+                            "Policy Assistant chatbox",
                             style={"fontSize": "22px", "fontWeight": "800", "color": THEME["text_main"]},
                         ),
                         html.Button(
