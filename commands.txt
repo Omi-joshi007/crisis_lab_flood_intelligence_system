@@ -1,0 +1,40 @@
+Activate virtual terminal - 
+source "/Users/dhurandhar/Crisis Lab Project/crisis_lab_project-main/.venv/bin/activate"; 
+
+Install required libraries - 
+pip install pandas psycopg2-binary python-dotenv openai openpyxl
+
+Prepare batch input - 
+python flood_event_batch_pipeline_3.py prepare
+
+Submit batch - 
+python flood_event_batch_pipeline_3.py submit
+
+Status check command - 
+python flood_event_batch_pipeline_3.py status --batch-id batch_6a4755836bdc8190afe54e9a812d28a5
+
+Download result after submission - 
+python flood_event_batch_pipeline_3.py download --batch-id batch_6a4755836bdc8190afe54e9a812d28a5
+
+Import results in postgresql - 
+python flood_event_batch_pipeline_3.py import
+
+Cancel batch command -
+python -c "from dotenv import load_dotenv; load_dotenv(); from openai import OpenAI; print(OpenAI().batches.cancel('batch_6a2b58b3faec8190b056865063b85c35'))"
+
+One command option to execute all - prepare, submit, wait, download, import
+python flood_event_batch_pipeline.py run --poll
+
+
+------------ 
+
+New pipeline - 
+python flood_event_verified_pipeline.py prepare-verify
+python flood_event_verified_pipeline.py process-all-verify-parts
+python flood_event_verified_pipeline.py combine-verify
+python flood_event_verified_pipeline.py import-verify
+python flood_event_verified_pipeline.py prepare-extract
+python flood_event_verified_pipeline.py submit-extract
+python flood_event_verified_pipeline.py status --batch-id batch_6a7e5e62ac20819091750b0faa7f06f7
+python flood_event_verified_pipeline.py download-extract --batch-id batch_6a7e5e62ac20819091750b0faa7f06f7
+python flood_event_verified_pipeline.py import-extract
