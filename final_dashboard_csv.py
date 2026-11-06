@@ -575,7 +575,7 @@ def filter_impacts(df, selected_event, selected_years, selected_regions, selecte
 
 def build_map(filtered_df):
     if filtered_df.empty:
-        fig = px.scatter_mapbox(lat=[], lon=[], zoom=4)
+        fig = px.scatter_map(lat=[], lon=[], zoom=4)
         fig.update_layout(
             #mapbox_style="carto-darkmatter",
             map_style="dark",
@@ -596,7 +596,7 @@ def build_map(filtered_df):
     map_df = filtered_df[filtered_df["is_mapped"] == True].copy()
 
     if map_df.empty:
-        fig = px.scatter_mapbox(lat=[], lon=[], zoom=4)
+        fig = px.scatter_mapb(lat=[], lon=[], zoom=4)
         fig.update_layout(
             #mapbox_style="carto-darkmatter",
             map_style="dark",
@@ -627,7 +627,7 @@ def build_map(filtered_df):
         axis=1,
     )
 
-    fig = px.scatter_mapbox(
+    fig = px.scatter_map(
         map_df,
         lat="plot_lat",
         lon="plot_lon",
